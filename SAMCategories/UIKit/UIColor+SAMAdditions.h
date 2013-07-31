@@ -68,6 +68,29 @@
 /**
  Creates and returns an UIColor object containing a given value.
  
+ @param rgbValue The int value for the new color. Example format 0x000000
+ 
+ @return An UIColor object containing a value.
+ 
+ The default alpha value is `1.0`.
+ */
+
++ (instancetype)sam_colorWithRGBA:(int)rgbValue;
+
+/**
+ Creates and returns an UIColor object containing a given value.
+ 
+ @param rgbValue The int value for the new color. Example format 0x000000
+ @param alphaValue The float value for alpha color.
+ 
+ @return An UIColor object containing a value.
+ 
+ */
++ (instancetype)sam_colorWithRGBA:(int)rgbValue alpha:(float)alphaValue;
+
+/**
+ Creates and returns an UIColor object containing a given value.
+ 
  @param hex The value for the new color. The `#` sign is not required.
  
  @return An UIColor object containing a value.

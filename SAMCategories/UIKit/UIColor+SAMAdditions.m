@@ -279,6 +279,18 @@
 	return nil;
 }
 
++ (instancetype)sam_colorWithRGBA:(int)rgbValue {
+	return [self sam_colorWithRGBA:rgbValue alpha:1.0f];
+}
+
++ (instancetype)sam_colorWithRGBA:(int)rgbValue alpha:(float)alphaValue {
+
+	CGFloat redColor = ((CGFloat)((rgbValue & 0xff0000) >> 16)) / 255.0f;
+	CGFloat greenColor = ((CGFloat)((rgbValue & 0xff00) >> 8)) / 255.0f;
+	CGFloat blueColor = ((CGFloat)(rgbValue & 0xff)) / 255.0f;
+
+	return [UIColor colorWithRed:redColor green:greenColor blue:blueColor alpha:alphaValue];
+}
 
 + (instancetype)sam_colorWithHex:(NSString *)hex {
 	// Remove `#` and `0x`

@@ -105,4 +105,18 @@
 	STAssertEqualObjects([[white colorWithAlphaComponent:0.2f] sam_hexValueWithAlpha:YES], @"ffffff33", nil);
 }
 
+- (void)testColorFromRGBA {
+	UIColor *red = [UIColor redColor];
+	STAssertEqualObjects(red, [UIColor sam_colorWithRGBA:0xff0000 alpha:1.0f], nil);
+	
+	UIColor *green = [UIColor greenColor];
+	STAssertEqualObjects(green, [UIColor sam_colorWithRGBA:0x00ff00 alpha:1.0f], nil);
+
+	UIColor *blue = [UIColor blueColor];
+	STAssertEqualObjects(blue, [UIColor sam_colorWithRGBA:0x0000ff alpha:1.0f], nil);
+
+	UIColor *bleh = [UIColor colorWithRed:1.0f green:0.2f blue:0.0f alpha:0.2f];
+	STAssertEqualObjects(bleh, [UIColor sam_colorWithRGBA:0xff3300 alpha:0.2f], nil);
+}
+
 @end
